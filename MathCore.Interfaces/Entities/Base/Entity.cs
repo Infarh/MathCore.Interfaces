@@ -7,14 +7,12 @@ namespace MathCore.Interfaces.Entities.Base
     {
         public T Key { get; set; }
 
-        public bool Equals(Entity<T> other) =>
+        public virtual bool Equals(Entity<T> other) =>
             other != null 
-            && other.GetType().IsInstanceOfType(this) 
             && EqualityComparer<T>.Default.Equals(Key, other.Key);
 
-        public bool Equals(IEntity<T> other) =>
+        public virtual bool Equals(IEntity<T> other) =>
             other != null 
-            && other.GetType().IsInstanceOfType(this) 
             && EqualityComparer<T>.Default.Equals(Key, other.Key);
 
         public override bool Equals(object obj)
