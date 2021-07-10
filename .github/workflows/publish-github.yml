@@ -24,10 +24,10 @@ jobs:
       - name: Building
         run: |
           dotnet build MathCore.Interfaces -c Release --nologo
-          dotnet build Tests/MathCore.Interfaces.Tests -c Release --nologo
+#          dotnet build Tests/MathCore.Interfaces.Tests -c Release --nologo
         
-      - name: Testing
-        run: dotnet test Tests/MathCore.Interfaces.Tests -c Release --nologo --no-build
+#      - name: Testing
+#        run: dotnet test Tests/MathCore.Interfaces.Tests -c Release --nologo --no-build
         
       - name: Packing
         run: dotnet pack MathCore.Interfaces -c Release -v m          
