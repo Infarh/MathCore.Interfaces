@@ -1,11 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <PropertyGroup>
+    <Version>0.0.1</Version>
+    <PackageReleaseNotes>Документация</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MathCore.Interfaces.snk</AssemblyOriginatorKeyFile>
+    <Authors>shmachilin@gmail.com</Authors>
+    <Product>MathCore</Product>
+    <Description>Пакет базовых интерфейсов</Description>
+    <Copyright>shmachilin@gmail.com</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Infarh/MathCore.Interfaces</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Infarh/MathCore.Interfaces.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Интерфейсы</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>MathCore.Interfaces.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
 
 </Project>
